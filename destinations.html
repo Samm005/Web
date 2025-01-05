@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destinations</title>
+    <style>
+        .image{
+            width: 50%;
+            align-self: auto;
+            height: fit-content;
+            overflow: hidden;
+        }
+        .heading{
+            color:chocolate;font-family: 'Times New Roman', Times, serif; font-size: 25px;
+        }
+        .t1{
+            color:crimson;font-size: 35px;
+        }
+        li{
+            color:#333;font-size: 20px;
+        }
+        body {
+            transition: background-image 1s ease; 
+            background-size: cover; /* Make sure the image covers the entire page */
+            background-position: center;
+            background-repeat: no-repeat;
+            font-family: Arial, sans-serif;
+            background-color: #ceb8bd;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        .topnav {
+            position: relative;
+            overflow: hidden;
+            background-color: #000c04; /* Netherlands blue */
+        }
+
+        .topnav a {
+            float: left;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+
+        .topnav a:hover {
+            background-color: #78ebfd;
+            color: black;
+        }
+
+        .topnav a.active {
+            background-color: #78ebfd;
+            color: #000000;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center; /* Center vertically */
+            height: 100%; /* Full height for the section */
+            position: relative; /* For layering */
+            z-index: 1; /* Ensure text is above background */
+            color: rgb(79, 0, 0); /* Text color */
+            text-shadow: 1px 1px 2px rgb(149, 117, 117); /* Text shadow for better readability */
+        }
+        h1 {
+            margin-top: 20px;
+            color: #0066cc;
+            text-align: center;
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 30px;
+            margin: 50px auto;
+            max-width: 65%; /* Make the container wider */
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        h1 {
+            color: #000000;
+            font-size: 32px;
+            margin-bottom: 20px;
+            font-family: 'Georgia', serif;
+        }
+
+        /* Dropdown Styling */
+        select {
+            width: 80%; /* Cover a larger portion of the container */
+            padding: 15px; /* Increase padding */
+            margin-top: 20px;
+            font-size: 20px; /* Larger font for better readability */
+            border: 1px solid #000000;
+            border-radius: 5px;
+            transition: border-color 0.5s;
+        }
+
+        select:focus {
+            border-color: #0066cc;
+            outline: none;
+        }
+
+        /* Place Info Section */
+        .place-info {
+            margin-top: 30px;
+            padding: 20px;
+            text-align: left;
+        }
+
+        .place-info h2 {
+            font-size: 35px;
+            color: #c84b31;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        .place-info p {
+            font-size: 25px;
+            color: #210082;
+        }
+
+        .place-info ol {
+            list-style-type: decimal;
+            margin-left: 20px;
+        }
+
+        .place-info li {
+            margin-bottom: 10px;
+            font-size: 20px;
+            color: #000000;
+        }
+
+        /* Image Styling */
+        .image {
+            width: 100%;
+            border-radius: 8px;
+            margin: 10px 0;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .image:hover {
+            transform: scale(1.016);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Footer Styling */
+        .footer {
+            margin-top: 40px;
+            color: #777;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navigation Bar -->
+<div class="topnav">
+    <div class="topnav-right">
+        <a  href="home.html">Home</a>
+        <a class="active" href="destinations.html">Top Destinations</a>
+        <a href="Travel-tips.html">Travel Tips</a>
+        <a href="Interactive-map.html">Map</a>
+        <a href="contact.html">Contact Us</a>
+    </div>
+</div>
+
+<h1 style="-webkit-text-stroke:1px #f2f2f2; color: #010200; font-size: 45px;">Learn About Popular Places</h1>
+<div class="container">
+    <label for="placeSelect">Select a Place:</label>
+    <select id="placeSelect" onchange="displayPlaceInfo()">
+        <option value="" disabled selected>Choose a place...</option>
+        <option value="Amsterdam">Amsterdam</option>
+        <option value="Rotterdam">Rotterdam</option>
+        <option value="The Hague">The Hague</option>
+        <option value="Utrecht">Utrecht</option>
+    </select>
+
+    <div class="place-info" id="placeInfo" >
+        <!-- Place information will be displayed here -->
+        <p>Please select a place to learn more about it.</p>
+    </div>
+</div>
+
+<script>
+    function displayPlaceInfo() {
+        const placeInfo = document.getElementById("placeInfo");
+        const selectedPlace = document.getElementById("placeSelect").value;
+
+        let info = "";
+
+        switch (selectedPlace) {
+            case "Amsterdam":
+                info = `
+                    <h2 class="heading">Amsterdam</h2>
+                    <p class="t1">Places in Amsterdam</p>
+                    <ol>
+                        <li>Rijksmuseum: The national museum of the Netherlands dedicated to Dutch arts and history.</li>
+                        <img src="images/Rijksmuseum.jpg" class="image" alt="Rijksmuseum">
+                        <li>Van Gogh Museum: Houses the largest Van Gogh collection in the world.</li>
+                        <img src="images/Van Gogh Museum.jpg" class="image" alt="Van Gogh Museum">
+                        <li>Anne Frank House: Located in the city centre, a must-visit historic site.</li>
+                        <img src="images/Anne Frank House.jpg" class="image" alt="Anne Frank House">
+                        <li>Stedelijk Museum: Focuses on Modern Art and includes nearby museums.</li>
+                        <img src="images/Stedelijk Museum.jpg" class="image" alt="Stedelijk Museum">
+                        <li>Jordaan: A charming, historic neighborhood known for its narrow streets and canals.</li>
+                        <img src="images/Jordaan.png" class="image" alt="Jordaan">
+                        <li>Vondelpark: Amsterdams largest and most popular park.</li>
+                        <img src="images/Vondelpark.png" class="image" alt="Vondelpark">
+                    </ol>`;
+                break;
+            case "Rotterdam":
+                info = `
+                    <h2 class="heading">Rotterdam</h2>
+                    <p class="t1">Places in Rotterdam</p>
+                    <ol>
+                        <li>Cube Houses: Innovative, iconic houses designed by architect Piet Blom.</li>
+                        <img src="images/Cube Houses.jpeg" class="image" alt="Cube Houses">
+                        <li>Euromast: An observation tower with panoramic views of the city.</li>
+                        <img src="images/Euromast.jpg" class="image" alt="Euromast">
+                        <li>Erasmus Bridge: A famous bridge connecting parts of Rotterdam.</li>
+                        <img src="images/Erasmus Bridge.jpeg" class="image" alt="Erasmus Bridge">
+                        <li>Museum Boijmans Van Beuningen: A comprehensive museum of Western art.</li>
+                        <img src="images/Museum Boijmans Van Beuningen.jpg" class="image" alt="Museum Boijmans Van Beuningen">
+                        <li>Kunsthal Rotterdam: A museum in the Museumpark with a diverse collection.</li>
+                        <img src="images/Kunsthal Rotterdam.jpg" class="image" alt="Kunsthal Rotterdam">
+                        <li>Diergaarde Blijdorp: One of the oldest zoos in the Netherlands.</li>
+                        <img src="images/Diergaarde Blijdorp.jpg" class="image" alt="Diergaarde Blijdorp">
+                    </ol>`;
+                break;
+            case "The Hague":
+                info = `
+                    <h2 class="heading">The Hague</h2>
+                    <p class="t1">Places in The Hague</p>
+                    <ol>
+                        <li>Peace Palace: Houses international law bodies like the ICJ and PCA.</li>
+                        <img src="images/Peace Palace.jpeg" class="image" alt="Peace Palace">
+                        <li>Mauritshuis: Museum of Dutch paintings from the Golden Age.</li>
+                        <img src="images/Mauritshuis.jpeg" class="image"  alt="Mauritshuis">
+                        <li>Binnenhof: Complex of buildings housing Dutch government.</li>
+                        <img src="images/Binnenhof.jpeg" class="image"  alt="Binnenhof">
+                        <li>Kunstmuseum Den Haag: Art museum with a large collection.</li>
+                        <img src="images/Kunstmuseum Den Haag.jpg" class="image"  alt="Kunstmuseum Den Haag">
+                        <li>Noordeinde Palace: Official workplace of the Dutch king.</li>
+                        <img src="images/Noordeinde Palace.jpeg" class="image" alt="Noordeinde Palace">
+                        <li>Scheveningen Beach: Popular seaside resort with sandy beaches.</li>
+                        <img src="images/Scheveningen Beach.jpg" class="image" alt="Scheveningen Beach">
+                    </ol>`;
+                break;
+            case "Utrecht":
+                info = `
+                    <h2 class="heading">Utrecht</h2>
+                    <p class="t1">Places in Utrecht</p>
+                    <ol>
+                        <li>Domtoren: Gothic cathedral tower with panoramic views.</li>
+                        <img src="images/Domtoren.jpg" class="image" alt="Domtoren">
+                        <li>Domplein: Historic heart of the city built on a Roman castellum.</li>
+                        <img src="images/Domplein.jpeg" class="image" alt="Domplein">
+                        <li>Oudegracht: Historic canal with shops and cafes.</li>
+                        <img src="images/Oudegracht.jpeg" class="image" alt="Oudegracht">
+                        <li>Central Museum: Museum with a large local art collection.</li>
+                        <img src="images/Central Museum.jpeg" class="image" alt="Central Museum">
+                        <li>Museum Speelklok: Self-playing musical instrument collection.</li>
+                        <img src="images/Museum Speelklok.jpeg" class="image" alt="Museum Speelklok">
+                        <li>Utrecht Centraal: Stunning railway station, one of the most beautiful in the Netherlands.</li>
+                        <img src="images/Utrecht Centraal.jpeg" class="image" alt="Utrecht Centraal">
+                    </ol>`;
+                break;
+            default:
+                info = `<p>Please select a place to learn more about it.</p>`;
+        }
+
+        placeInfo.innerHTML = info;
+    }
+    const backgroundImages = [
+            "url('file:///C:/Users/samud/Desktop/mini/n1.jpg')",
+            "url('file:///C:/Users/samud/Desktop/mini/n2.jpg')",
+            "url('file:///C:/Users/samud/Desktop/mini/n3.jpg')",
+            "url('file:///C:/Users/samud/Desktop/mini/n4.jpg')",
+            "url('file:///C:/Users/samud/Desktop/mini/n5.jpg')"
+        ];
+
+        let currentIndex = 0;
+
+        // Function to change the background image
+        function changeBackgroundImage() {
+            document.body.style.backgroundImage = backgroundImages[currentIndex];
+            
+            // Move to the next image in the array
+            currentIndex = (currentIndex + 1) % backgroundImages.length;
+        }
+
+        // Change background image every 4 seconds (4000 milliseconds)
+        setInterval(changeBackgroundImage, 4000);
+
+        // Initially set the background image
+        changeBackgroundImage();
+
+</script>
+</body>
+</html>

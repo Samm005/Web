@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Travel Tips - Explore the Netherlands</title>
+    <meta name="keywords" content="Netherlands, Travel Tips, Tourism, Dutch Culture">
+    <meta name="description" content="Essential travel tips for visiting the Netherlands: cultural etiquette, transportation advice, and safety tips.">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        /* Basic styling */
+        body {
+            background-image: url("travelling.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f7f7f7;
+        }
+
+        .topnav {
+            background-color: #000c04;
+            overflow: hidden;
+        }
+
+        .topnav a {
+            float: left;
+            display: block;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+
+        .topnav a:hover {
+            background-color: #78ebfd;
+            color: black;
+        }
+
+        .topnav a.active {
+            background-color: #78ebfd;
+            color: black;
+        }
+
+        .container {
+            padding: 40px;
+        }
+
+        .section {
+            margin: 20px 0;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .tips-list {
+            list-style-type: none;
+            padding: 10px;
+        }
+
+        .tips-list li {
+            background-color: #e0f7fa;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            position: relative;
+        }
+
+        /* Image hover styling */
+        .tips-list li:hover::after {
+            content: "";
+        position: fixed; /* Changed from absolute to fixed */
+        top: 50%; /* Center vertically */
+        left: 50%; /* Center horizontally */
+        transform: translate(-50%, -50%); /* Adjust for exact center alignment */
+        width: 750px;
+        height: 450px;
+        background-size: cover;
+        border-radius: 5px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        z-index: 1000;
+        }
+        .tips-list1 {
+            list-style-type: none;
+            padding: 10px;
+        }
+
+        .tips-list1 li {
+            background-color: #e0f7fa;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            position: relative;
+        }
+
+        /* Image hover styling */
+        .tips-list1 li:hover::after {
+            content: "";
+            position: absolute;
+            top: 10px;
+            right: -220px;
+            width: 200px;
+            height: 150px;
+            background-size: cover;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .tips-list li:nth-child(1):hover::after{
+            background-image: url("Giethoorn.jpg"); /* Replace with actual URL */
+        }
+
+        .tips-list li:nth-child(2):hover::after {
+            background-image: url("Zaanse Schans.jpg");
+        }
+
+        .tips-list li:nth-child(3):hover::after {
+            background-image: url("Texel Island.jpg"); 
+        }
+
+        .tips-list li:nth-child(4):hover::after {
+            background-image: url("Veluwe National Park.jpg"); 
+        }
+
+        .collapsible {
+            cursor: pointer;
+            font-weight: bold;
+            background-color: #6a6da5;
+            color: black;
+            padding: 10px;
+            border: none;
+            outline: none;
+            text-align: left;
+            width: 100%;
+            border-radius: 5px;
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 30px;
+        }
+
+        .content {
+            display: none;
+            overflow: hidden;
+            padding: 10px 20px;
+            background-color: #d88181;
+            border-radius: 5px;
+            color: #000c04;
+            -webkit-text-stroke-color: #e0f7fa;
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 25px;
+        }
+
+        /* Language support styling */
+        .language-popup {
+            position: relative;
+            display: inline-block;
+            cursor: pointer;
+            color: #007BFF;
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 25px;
+        }
+
+        .popup-text {
+            display: none;
+            position: absolute;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            z-index: 1;
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 25px;
+        }
+
+        .language-popup:hover .popup-text {
+            display: block;
+        }
+
+        /* New style for seasonal highlights box */
+        .highlight-box {
+            background-color: #e0f7fa;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #78ebfd;
+            color: #000c04;
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 25px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <div class="topnav">
+        <a href="home.html">Home</a>
+        <a href="destinations.html">Top Destinations</a>
+        <a class="active" href="travel-tips.html">Travel Tips</a>
+        <a href="interactive-map.html">Map</a>
+        <a href="contact.html">Contact Us</a>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container">
+        <h1 style="font-size: 45px;font-family: 'Times New Roman', Times, serif; color: #000000; text-align: center; -webkit-text-stroke: 0.5px rgb(111, 106, 106);">Travel Tips for Visiting the Netherlands</h1>
+
+        <!-- Seasonal Travel Highlights -->
+        <div class="section">
+            <button class="collapsible">Seasonal Travel Highlights</button>
+            <div class="content">
+                <p class="highlight-box"><strong>Spring:</strong> Visit the famous tulip fields in Keukenhof and enjoy mild weather.</p>
+                <p class="highlight-box"><strong>Summer:</strong> Perfect for exploring beaches and outdoor festivals.</p>
+                <p class="highlight-box"><strong>Autumn:</strong> Experience beautiful autumn foliage in parks and fewer crowds.</p>
+                <p class="highlight-box"><strong>Winter:</strong> Cozy up with winter festivities and ice skating on the canals (weather permitting).</p>
+            </div>
+        </div>
+
+        <!-- Local Hidden Gems -->
+        <div class="section">
+            <button class="collapsible">Local Hidden Gems</button>
+            <div class="content">
+                <ul class="tips-list">
+                    <li><strong>Giethoorn:</strong> Often called the "Venice of the North," this quiet village has scenic canals and footpaths.</li>
+                    <li><strong>Zaanse Schans:</strong> Experience traditional Dutch windmills, green wooden houses, and artisan workshops.</li>
+                    <li><strong>Texel Island:</strong> Discover sandy beaches, unique wildlife, and a relaxed pace on this tranquil island in the North Sea.</li>
+                    <li><strong>Veluwe National Park:</strong> Explore extensive forests, sand dunes, and the famous Kröller-Müller Museum with Van Gogh's works.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Basic Language Support -->
+        <div class="section">
+            <button class="collapsible">Basic Language Support</button>
+            <div class="content">
+                <p>Here are some helpful Dutch phrases for travelers:</p>
+                <ul class="tips-list1">
+                    <li><span class="language-popup">Hallo (Hello)<span class="popup-text">Standard greeting in Dutch.</span></span></li>
+                    <li><span class="language-popup">Dank u wel (Thank you)<span class="popup-text">Use when someone helps you or provides service.</span></span></li>
+                    <li><span class="language-popup">Waar is...? (Where is...?)<span class="popup-text">Useful for asking directions.</span></span></li>
+                    <li><span class="language-popup">Hoeveel kost dit? (How much does this cost?)<span class="popup-text">Use when shopping or dining out.</span></span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="container" style="text-align:center; padding-top: 30px;">
+        <p>&copy; 2024 Explore the Netherlands. All Rights Reserved.</p>
+    </div>
+
+    <!-- JavaScript for collapsible sections -->
+    <script>
+        const collapsibles = document.querySelectorAll(".collapsible");
+
+        collapsibles.forEach((collapsible) => {
+            collapsible.addEventListener("click", function() {
+                this.classList.toggle("active");
+                const content = this.nextElementSibling;
+                if (content.style.display === "block") {
+                    content.style.display = "none";
+                } else {
+                    content.style.display = "block";
+                }
+            });
+        });
+    </script>
+</body>
+</html>

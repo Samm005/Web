@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Explore the Netherlands</title>
+    <meta name="keywords" content="Netherlands, Tourism, Travel, Explore">
+    <meta name="description" content="Discover the beauty of the Netherlands: tulip fields, canals, museums, and vibrant cities.">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        /* Base styles */
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            color: white;
+            background-color: black;
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            overflow: hidden;
+            transition: background-image 1s ease-in-out;
+        }
+
+        /* Navbar */
+        .topnav {
+            overflow: hidden;
+            background-color: #000c04;
+        }
+
+        .topnav a {
+            float: left;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+
+        .topnav a:hover {
+            background-color: #78ebfd;
+            color: black;
+        }
+
+        .topnav a.active {
+            background-color: #78ebfd;
+            color: #000000;
+        }
+
+        /* Confirmation message */
+        .confirmation-message {
+            display: none;
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 18px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .confirmation-message button {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            font-size: 18px;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .confirmation-message button:hover {
+            background-color: #45a049;
+        }
+
+        /* Contact Us section */
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            color: black;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .contact-info div {
+            flex: 1;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .contact-form {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        .form-group input[type="text"],
+        .form-group input[type="email"],
+        .form-group textarea {
+            width: calc(100% - 22px);
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 14px;
+            box-sizing: border-box;
+        }
+
+        .form-group textarea {
+            width: 100%;
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+            transition: background-color 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            background-color: #45a049;
+        }
+
+        /* Responsive design */
+        @media screen and (max-width: 600px) {
+            .contact-info {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation bar -->
+    <div class="topnav">
+        <div class="topnav-right">
+            <a href="home.html">Home</a>
+            <a href="destinations.html">Top Destinations</a>
+            <a href="Travel-tips.html">Travel Tips</a>
+            <a href="Interactive-map.html">Map</a>
+            <a  class="active" href="contact.html">Contact Us</a>
+        </div>
+    </div>
+
+    <!-- Confirmation Message -->
+    <div class="confirmation-message" id="confirmationMessage">
+        <p>Message was sent</p>
+        <button onclick="goToHomePage()">OK</button>
+    </div>
+
+    <!-- Contact Us Section -->
+    <div class="container">
+        <h1>Contact Us</h1>
+
+        <!-- Contact Info -->
+        <div class="contact-info">
+            <div>
+                <p>123 Street, Amsterdam, Netherlands</p>
+            </div>
+            <div>
+                <p>Phone: +31 123 456 789</p>
+            </div>
+            <div>
+                <p>Email: info@explore-nl.com</p>
+            </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="contact-form">
+            <form id="contactForm">
+                <div class="form-group">
+                    <label for="name">Your Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Your Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Your Message:</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript to handle form submission and show confirmation message
+        document.getElementById("contactForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            // Show confirmation message
+            document.getElementById("confirmationMessage").style.display = "block";
+
+            // Clear the form fields (optional)
+            document.getElementById("contactForm").reset();
+        });
+
+        // Function to redirect to the home page after OK button click
+        function goToHomePage() {
+            window.location.href = "home.html"; // Redirect to the home page
+        }
+
+        // JavaScript for changing the background image
+        const backgrounds = [
+            "1.jpg",
+            "2.jpg",
+            "3.jpg",
+            "4.jpg",
+            "5.jpg"
+            
+        ];
+
+        let currentIndex = 0;
+
+        function changeBackground() {
+            document.body.style.backgroundImage = `url('${backgrounds[currentIndex]}')`;
+
+            // Update index for next image
+            currentIndex = (currentIndex + 1) % backgrounds.length;
+        }
+
+        // Change background every 5 seconds
+        setInterval(changeBackground, 5000);
+
+        // Initial background change
+        changeBackground();
+    </script>
+</body>
+</html>

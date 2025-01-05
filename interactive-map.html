@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Interactive Map - Explore the Netherlands</title>
+    <meta name="keywords" content="Netherlands, Interactive Map, Tourism, Dutch Culture, Travel">
+    <meta name="description" content="Explore the Netherlands on an interactive map with highlighted tourist spots.">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Leaflet CSS and JS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f7f7f7;
+        }
+
+        .topnav {
+            background-color: #000c04;
+            overflow: hidden;
+        }
+
+        .topnav a {
+            float: left;
+            display: block;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+
+        .topnav a:hover {
+            background-color: #78ebfd;
+            color: black;
+        }
+
+        .topnav a.active {
+            background-color: #78ebfd;
+            color: black;
+        }
+
+        /* Map container */
+        #map {
+            height: 600px; /* Height of the map */
+        }
+
+        .container {
+            padding: 40px;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 45px;
+            font-family: 'Times New Roman', Times, serif;
+            color: #000000;
+            text-align: center;
+        }
+
+        .map-description {
+            text-align: center;
+            font-size: 20px;
+            margin-bottom: 20px;
+            font-family: 'Times New Roman', Times, serif; color: brown;
+            font-size: 35px;
+            font-weight: bold;
+        }
+
+    </style>
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <div class="topnav">
+        <a href="home.html">Home</a>
+        <a href="destinations.html">Top Destinations</a>
+        <a href="travel-tips.html">Travel Tips</a>
+        <a class="active" href="interactive-map.html">Map</a>
+        <a href="contact.html">Contact Us</a>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container">
+        <h1>Interactive Map of the Netherlands</h1>
+        <p class="map-description">Explore top tourist spots and landmarks across the Netherlands with this interactive map!</p>
+
+        <!-- Leaflet Map Container -->
+        <div id="map"></div>
+    </div>
+
+    <!-- Footer -->
+    <div class="container" style="text-align:center; padding-top: 30px;">
+        <p>&copy; 2024 Explore the Netherlands. All Rights Reserved.</p>
+    </div>
+
+    <!-- JavaScript for Map -->
+    <script>
+        // Initialize the map
+        var map = L.map('map').setView([52.3676, 4.9041], 7); // Coordinates of the Netherlands (centered on Amsterdam)
+
+        // Set up the OpenStreetMap tile layer
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        // Add markers for tourist places
+        var touristPlaces = [
+            {
+                name: "Giethoorn",
+                coordinates: [52.866, 6.0844],
+                description: "Known as the 'Venice of the North,' this village features scenic canals and footpaths."
+            },
+            {
+                name: "Zaanse Schans",
+                coordinates: [52.503, 4.819],
+                description: "A collection of traditional Dutch windmills, green wooden houses, and workshops."
+            },
+            {
+                name: "Texel Island",
+                coordinates: [53.054, 4.7773],
+                description: "A tranquil island known for sandy beaches, wildlife, and natural beauty."
+            },
+            {
+                name: "Veluwe National Park",
+                coordinates: [52.139, 5.7589],
+                description: "A vast nature reserve with forests, sand dunes, and the Kröller-Müller Museum."
+            },
+            {
+                name:"Rijksmuseum",
+                coordinates:[52.36001865233751, 4.885248757284564],
+                description:"The national museum of the Netherlands dedicated to Dutch arts and history."
+            },
+            {
+                name:"Van Gogh Museum",
+                coordinates:[52.3581674050397, 4.881205297127335],
+                description:"Houses the largest Van Gogh collection in the world."
+            },
+            {
+                name:"Anne Frank House",
+                coordinates:[52.37533606868574, 4.884073056651087],
+                description:"Located in the city centre, a must-visit historic site."
+            },
+            {
+                name:"Stedelijk Museum",
+                coordinates:[52.35812901461158, 4.879691024112258],
+                description:"Focuses on Modern Art and includes nearby museums."
+            },
+            {
+                name:"Jordaan",
+                coordinates:[52.373963262402576, 4.879881417048082],
+                description:"A charming, historic neighborhood known for its narrow streets and canals."
+            },
+            {
+                name:"Vondelpark",
+                coordinates:[52.358099409933644, 4.868605481783961],
+                description:" Amsterdams largest and most popular park."
+            },
+            {
+                name:"Cube Houses",
+                coordinates:[51.92028672832231, 4.490617612442857],
+                description:"Innovative, iconic houses designed by architect Piet Blom."
+            },
+            {
+                name:"Euromast",
+                coordinates:[51.90552330312906, 4.466551566411762],
+                description:"An observation tower with panoramic views of the city."
+            },
+            {
+                name:"Erasmus Bridge",
+                coordinates:[51.90909663430816, 4.487165612442129],
+                description:"A famous bridge connecting parts of Rotterdam."
+            },
+            {
+                name:"Museum Boijmans Van Beuningen",
+                coordinates:[51.91442369758951, 4.473021424084027],
+                description:"A comprehensive museum of Western art."
+            },
+            {
+                name:"Kunsthal Rotterdam",
+                coordinates:[51.91077826099586, 4.473627924083791],
+                description:"A museum in the Museumpark with a diverse collection."
+            },
+            {
+                name:"Diergaarde Blijdorp",
+                coordinates:[51.92814474005693, 4.443918708741497],
+                description:"One of the oldest zoos in the Netherlands."
+            },
+            {
+                name:"Peace Palace",
+                coordinates:[52.08702078181336, 4.295422181766651],
+                description:"Houses international law bodies like the ICJ and PCA."
+            },
+            {
+                name:"Mauritshuis",
+                coordinates:[52.080570634310725, 4.314411356632281],
+                description:"Museum of Dutch paintings from the Golden Age."
+            },
+            {
+                name:"Binnenhof",
+                coordinates:[52.07978309178389, 4.3132729971096015],
+                description:"Complex of buildings housing Dutch government."
+            },
+            {
+                name:"Kunstmuseum Den Haag",
+                coordinates:[52.09001806060564, 4.280744183617789],
+                description:"Art museum with a large collection."
+            },
+            {
+                name:"Noordeinde Palace",
+                coordinates:[52.081678204052594, 4.306590166422937],
+                description:"Official workplace of the Dutch king."
+            },
+            {
+                name:"Scheveningen Beach",
+                coordinates:[52.10253721350519, 4.302843542517178],
+                description:"Popular seaside resort with sandy beaches."
+            },
+            {
+                name:"Domtoren",
+                coordinates:[52.09085523466813, 5.121199566423527],
+                description:"Gothic cathedral tower with panoramic views."
+            },
+            {
+                name:"Domplein",
+                coordinates:[52.09076865099639, 5.121711939438601],
+                description:"Historic heart of the city built on a Roman castellum."
+            },
+            {
+                name:"Oudegracht",
+                coordinates:[52.090251084561196, 5.120668730591238],
+                description:" Historic canal with shops and cafes."
+            },
+            {
+                name:"Central Museum",
+                coordinates:[52.08387983107921, 5.125813437587225],
+                description:"Museum with a large local art collection."
+            },
+            {
+                name:"Museum Speelklok",
+                coordinates:[52.09098566967975, 5.119543781766911],
+                description:"Self-playing musical instrument collection."
+            },
+            {
+                name:"Utrecht Centraal",
+                coordinates:[52.089533245860544, 5.10990356827436],
+                description:"Stunning railway station, one of the most beautiful in the Netherlands."
+            }
+        ];
+
+        // Add a marker for each tourist place
+        touristPlaces.forEach(function(place) {
+            L.marker(place.coordinates)
+                .addTo(map)
+                .bindPopup("<b>" + place.name + "</b><br>" + place.description)
+                .openPopup();
+        });
+    </script>
+</body>
+</html>

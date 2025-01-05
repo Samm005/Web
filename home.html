@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Explore the Netherlands</title>
+    <meta name="keywords" content="Netherlands, Tourism, Travel, Explore">
+    <meta name="description" content="Discover the beauty of the Netherlands: tulip fields, canals, museums, and vibrant cities.">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: left;
+            background-color: black;
+            background-image: url("netherlandsbg.jpg"); /* Change to relative path if needed */
+            background-size: cover; /* Ensure the background image covers the entire section */
+            background-position: center; /* Center the background image */
+            background-repeat: no-repeat; /* Prevent background image from repeating */
+            height: 100vh; /* Full height for the background */
+        }
+
+        .topnav {
+            overflow: hidden;
+            background-color: #000c04; /* Netherlands blue */
+        }
+
+        .topnav a {
+            float: left;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+
+        .topnav a:hover {
+            background-color: #78ebfd;
+            color: black;
+        }
+
+        .topnav a.active {
+            background-color: #78ebfd;
+            color: #000000;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center; /* Center vertically */
+            height: 100%; /* Full height for the section */
+            position: relative; /* For layering */
+            z-index: 1; /* Ensure text is above background */
+            color: white; /* Text color */
+            text-shadow: 1px 1px 2px black; /* Text shadow for better readability */
+        }
+
+        h1 {
+            font-size: 50px;
+        }
+
+        h2.rotate {
+            font-size: 30px;
+            margin: 20px 0;
+        }
+
+        .btn {
+            background-color: #004aad;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 100px;
+            font-size: 18px;
+        }
+        
+        /* Additional styles for other sections */
+        #x {
+            text-align: center;
+            font-family: 'Times New Roman', Times, serif;
+            color: #36ff0e;
+            font-size: 55px;
+            -webkit-text-stroke: 1px rgb(255, 255, 255)
+        }
+        
+        #r {
+            color: rgb(239, 242, 243); 
+            font-size: 25px;border: #0000f8;
+            padding-left: 5%;
+            padding-right:5% ;
+        }
+
+        .destination-image {
+            width: 100%;
+            max-width: 500px;
+            height: auto;
+            margin-top: 20px;
+            .clock {
+            font-size: 48px;
+            font-weight: bold;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+        }
+    }
+
+        .time {
+            font-size: 330px;
+            font-family: 'Times New Roman', Times, serif;
+            color: #ca2a2a ;
+            -webkit-text-stroke: 2px rgb(255, 255, 255)
+        }
+        .date {
+            font-size: 150px;
+            color: #6f00ff;  
+            -webkit-text-stroke: 2px rgb(255, 255, 255)             
+        }
+    
+        .clock {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-image: url("file:///C:/Users/samud/Desktop/mini/images/netherlandsclock.jpg"); /* Separate background for clock */
+            background-size: cover;
+            background-repeat: no-repeat;
+    height: 100vh; /* Full viewport height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+            background-position:center;
+            border-radius: 15px;
+            text-align: center;
+            padding: 10px;
+            margin: 0 auto;
+            color:#ffffff;
+            font-weight: bold;
+             text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+
+        }
+    </style>
+
+    <!-- Animate CSS, Bootstrap, Font Awesome, etc. -->
+    <link rel="stylesheet" href="css/animate.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link href='http://fonts.googleapis.com/css?family=Raleway:400,300,700,800' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/jquery.fullPage.css">
+    <link rel="stylesheet" href="css/templatemo-style.css">
+</head>
+
+<body>
+    <div class="topnav">
+        <div class="topnav-right">
+            <a class="active" href="home.html">Home</a>
+            <a href="destinations.html">Top Destinations</a>
+            <a href="Travel-tips.html">Travel Tips</a>
+            <a href="Interactive-map.html">Map</a>
+            <a href="contact.html">Contact Us</a>
+        </div>
+    </div>
+    <br>
+
+    <div id="home" class="section">
+        <div class="container">
+            <h1 style="font-size: 75px;color: rgb(120, 10, 87);border: #f2f2f2;font-family: 'Times New Roman', Times, serif;  -webkit-text-stroke: 2px rgb(62, 0, 0);">EXPLORE THE NETHERLANDS</h1>
+            <h2 style="font-size: 35px; color: rgb(94, 6, 121); border: rgb(207, 193, 193);border-radius: 5pt; -webkit-text-stroke: 2px rgb(87, 62, 62);">Your gateway to tulip fields, canals, windmills and many more</h2><br><br>
+            <h2 class="rotate" id="rotatingText" style="font-size: 65px; color:rgb(0, 208, 255); -webkit-text-stroke: 2px rgb(0, 0, 0);">Discover</h2><br><br><br>
+            <a href="#time" class="btn">GET STARTED</a>
+        </div>
+    </div>
+    <br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+    <div class="clock">
+        <div id="time" class="time"></div>
+        <div id="date" class="date"></div>
+    </div>
+    <br><br>
+
+
+    <div id="overview" class="section">
+        <h1 id="x">Overview of the Netherlands</h1><br>
+        <p id="r">The Netherlands is known for its picturesque landscapes, vibrant cities, and rich history. From the iconic windmills and tulip fields to the charming canals of Amsterdam, there is so much to explore!</p>
+        <p id="r">The Netherlands, also known as Holland, is a country in Northwestern Europe, with overseas territories in the Caribbean. It is the largest of the four constituent countries of the Kingdom of the Netherlands and consists of twelve provinces. The official language is Dutch, with West Frisian as a secondary language in the province of Friesland. The Netherlands is known for its low elevation and flat topography, with 26% below sea level. The country has a rich history, including the Dutch Golden Age, which saw the establishment of colonies and trading posts worldwide. With a population of over 18 million, the Netherlands is the world's second-largest exporter of food and agricultural products. The country has a parliamentary constitutional monarchy with a unitary structure since 1848 and has a long record of social tolerance, legalizing prostitution and euthanasia. The Netherlands is a founding member of various organizations, including the European Union, Eurozone, G10, NATO, OECD, and WTO. The Hague holds the seat of the States General, Cabinet, and Supreme Court.</p>
+    </div>
+
+    <div class="container">
+        <div class="column logo">
+            <img src="netherlandsflag.jpg" alt="flag">
+        </div>
+        <div class="column about">
+            <h2>About Us</h2>
+            <div class="navigation">
+                <a href="destinations.html">Top destinations</a>
+                <a href="travel-tips.html">Travel tips</a>
+                <a href="Interactive-map.html">Map</a>
+                <a href="contact.html">Contact Us</a>
+            </div>
+        </div>
+        <div class="column contact">
+            <h2>Contact Us</h2>
+            <p>123 Street, Amsterdam, Netherlands</p>
+            <p>Email: info@explore-nl.com</p>
+            <p>Phone: +31 123 456 789</p>
+        </div>
+    </div>
+
+    <!-- jQuery and other scripts -->
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/custom.js"></script>
+    <script src="js/jquery.simple-text-rotator.js"></script>
+    <script>
+        // JavaScript for rotating text
+        const words = ["Discover", "Experience", "Enjoy", "Repeat"];
+        let index = 0; // Current index
+        const rotatingText = document.getElementById("rotatingText"); // Text element
+
+        // Function to change text
+        function changeText() {
+            rotatingText.textContent = words[index]; // Change the text to the current word
+            index = (index + 1) % words.length; // Move to the next word, looping back to the start
+        }
+
+        setInterval(changeText, 1000);
+
+        function updateClock() {
+        const now = new Date();
+
+        // Formatting time in Amsterdam timezone
+        const timeOptions = { 
+            timeZone: 'Europe/Amsterdam',
+            hour: '2-digit',
+            minute: '2-digit',
+            second: '2-digit',
+            hour12: false
+        };
+        const time = now.toLocaleTimeString('en-GB', timeOptions);
+
+        // Formatting date in Amsterdam timezone
+        const dateOptions = {
+            timeZone: 'Europe/Amsterdam',
+            weekday: 'long',
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
+        };
+        const date = now.toLocaleDateString('en-GB', dateOptions);
+
+        // Displaying the current time and date in the clock section
+        document.getElementById('time').textContent = time;
+        document.getElementById('date').textContent = date;
+    }
+
+    // Update the clock every second
+    setInterval(updateClock, 1000);
+
+    // Initialize the clock display
+    updateClock();
+    </script>
+</body>
+</html>
+
